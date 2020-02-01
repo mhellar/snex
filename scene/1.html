@@ -52,7 +52,8 @@
 <body>
     <a-scene>
         <a-assets>
-            <a-mixin id=" teleport" teleport-controls="type: parabolic; cameraRig: #cameraRig; defaultPlaneSize: 1000;">
+            <a-mixin id="teleport"
+                teleport-controls="type: parabolic; button: trigger; cameraRig: #cameraRig; defaultPlaneSize: 1000; ">
             </a-mixin>
             <a-mixin id="light" geometry="primitive: sphere; radius: 1.5" material="color: #FFF; shader: flat"
                 light="color: #DDDDFF; distance: 120; intensity: 1ß; type: point"></a-mixin>
@@ -89,9 +90,11 @@
             <a-entity id="cameraRig" position="0 0.1 0">
                 <a-entity camera wasd-controls look-controls></a-entity>
                 <a-entity id="rightHand" mixin="teleport" laser-controls="hand: right"
-                    windows-motion-controls="hand: right" oculus-go-controls="hand: right">
+                    windows-motion-controls="hand: right" oculus-go-controls="hand: right"
+                    oculus-touch-controls="hand: right">
                     <a-entity id="leftHand" mixin="teleport" laser-controls="hand: left"
-                        windows-motion-controls="hand: left" oculus-go-controls="hand: left">
+                        windows-motion-controls="hand: left" oculus-go-controls="hand: left"
+                        oculus-touch-controls="hand: left">
                     </a-entity>
                 </a-entity>
 
