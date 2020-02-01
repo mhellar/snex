@@ -61,31 +61,34 @@
             </a-mixin>
             <audio id="grave" src="assets/sound/169975__klankbeeld__horror-ghost-22.wav" preload="auto"></audio>
         </a-assets>
+        <a-asset-item id="hallway" src="assets/models/gumusler_monastery/scene.gltf" scale="0.2 0.2 0.2"
+            position="0 -1 0">
+            <a-asset-item id="nature-obj" src="assets/models/nature.obj"></a-asset-item>
+            <a-asset-item id="nature-mtl" src="assets/models/nature.mtl"></a-asset-item>
+        </a-asset-item>
+        </a-assets>
+
+        <a-entity environment="preset: forest;fog: 0.7"></a-entity>
 
         <a-entity sound="src: #grave; autoplay: true;loop: true"></a-entity>
         <!-- Use entity-generator component to generate 120 entities with the torusKnot mixin. -->
-        <a-entity entity-generator="mixin: torusKnot; num: 15></a-entity>
-            <!-- Lights. -->
-            <a-entity animation=" property: rotation; to: 0 0 360; dur: 4000; easing: linear; loop: true">
+        <a-entity entity-generator="mixin: torusKnot; num: 15"></a-entity>
+        <a-entity animation="property: rotation; to: 0 0 360; dur: 4000; easing: linear; loop: true">
             <a-entity mixin="light" position="30 0 0"></a-entity>
         </a-entity>
+
 
         <a-entity animation="property: rotation; to: 360 0 0; dur: 4000; easing: linear; loop: true">
             <a-entity mixin="light" position="0 0 40"></a-entity>
         </a-entity>
 
-        <a-asset-item id="hallway" src="assets/models/gumusler_monastery/scene.gltf" scale="0.2 0.2 0.2"
-            position="0 -1 0">
-        </a-asset-item>
-        </a-assets>
+        <a-obj-model src="#nature-obj" mtl="#nature-mtl" material="color:#eee; metalness:1;roughness:0;side:double;"
+            animation__rotation="property: rotation; dir: alternate; dur: 30000;
+                                  easing: easeInSine; loop: true; to: 0 360 0" obj-model="" position="0 5 -2"
+            scale="0.1 0.1 0.1">
+        </a-obj-model>
 
 
-        <!-- create default environment -->
-        <!-- <a-entity class="environment" position="0 50 0"
-            light="type: hemisphere; color: #91dacf; intensity: 0.6; groundColor: #00df00" visible=""></a-entity> -->
-
-
-        <a-entity environment="preset: forest;fog: 0.7"></a-entity>
         <a-gltf-model src="#hallway" scale="1 1 1" position="0 0 7" animation-mixer>
             <a-entity id="cameraRig" position="0 0.1 0">
                 <a-entity camera wasd-controls look-controls></a-entity>
