@@ -8,9 +8,8 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js">
     </script>
-    <script
-        src="https://unpkg.com/aframe-entity-generator-component@3.0.1/dist/aframe-entity-generator-component.min.js">
-        </script>
+    <script src="https://unpkg.com/aframe-entity-generator-component@3.0.1/dist/aframe-entity-generator-component.min.js">
+    </script>
 
     <script>
 
@@ -55,21 +54,34 @@
             <a-mixin id="teleport"
                 teleport-controls="type: parabolic; button: trigger; cameraRig: #cameraRig; defaultPlaneSize: 10000; ">
             </a-mixin>
+
             <a-mixin id="light" geometry="primitive: sphere; radius: 1.5" material="color: #FFF; shader: flat"
                 light="color: #DDDDFF; distance: 120; intensity: 1ß; type: point"></a-mixin>
+
             <a-mixin id="torusKnot" random-torus-knot random-material random-position="min: -40 8 -40; max: 40 40 40">
             </a-mixin>
-            <audio id="grave" src="assets/sound/169975__klankbeeld__horror-ghost-22.wav" preload="auto"></audio>
+            <!-- sounds -->
+            <audio id="snd1" src="assets/sound/footsteps_mix.wav" preload="auto"></audio>
+            <audio id="snd" src="assets/sound/vibraphone_mix.wav" preload="auto"></audio>
+            <!-- models -->
+
             <a-asset-item id="hallway" src="assets/models/gumusler_monastery/scene.gltf" scale="0.2 0.2 0.2"
                 position="0 -1 0">
                 <a-asset-item id="nature-obj" src="assets/models/nature.obj"></a-asset-item>
                 <a-asset-item id="nature-mtl" src="assets/models/nature.mtl"></a-asset-item>
+
+                <a-asset-item id="ryan-obj" src="assets/models/ryan/TreeStatue.obj"></a-asset-item>
+                <a-asset-item id="ryan-mtl" src="assets/models/ryan/TreeStatue.mtl"></a-asset-item>
+
+                <a-asset-item id="eryk-obj" src="assets/models/eryk/Eryk.obj"></a-asset-item>
+                <a-asset-item id="eryk-mtl" src="assets/models/eryk/Eryk.mtl"></a-asset-item>
+
             </a-asset-item>
         </a-assets>
 
         <a-entity environment="preset: forest;fog: 0.7"></a-entity>
 
-        <a-entity sound="src: #grave; autoplay: true;loop: true"></a-entity>
+        
         <!-- Use entity-generator component to generate 120 entities with the torusKnot mixin. -->
         <a-entity entity-generator="mixin: torusKnot; num: 15"></a-entity>
         <a-entity animation="property: rotation; to: 0 0 360; dur: 4000; easing: linear; loop: true">
@@ -81,14 +93,44 @@
             <a-entity mixin="light" position="0 0 40"></a-entity>
         </a-entity>
 
-        <a-obj-model src="#nature-obj" mtl="#nature-mtl" material="color:#eee; metalness:1;roughness:0;side:double;"
+        <a-obj-model src="#ryan-obj" mtl="#ryan-mtl" material="color:#eee; metalness:1;roughness:0;side:double;"
             animation__rotation="property: rotation; dir: alternate; dur: 30000;
                                   easing: easeInSine; loop: true; to: 0 360 0" obj-model="" position="0 1 -2"
             scale="0.1 0.1 0.1">
         </a-obj-model>
 
+        <!-- <a-obj-model src="#eryk-obj" mtl="#eryk-mtl" material="color:#eee; metalness:1;roughness:0;side:double;"
+        animation__rotation="property: rotation; dir: alternate; dur: 30000;
+                              easing: easeInSine; loop: true; to: 0 360 0" obj-model="" position="0 1 -2"
+        scale="0.1 0.1 0.1">
+    </a-obj-model> -->
 
-        <a-gltf-model src="#hallway" scale="1 1 1" position="0 0 7" animation-mixer>
+    <!-- <a-obj-model src="#eryk-obj" mtl="#eryk-mtl" scale="30 30 30" postion="-84 -105 8" material="color: #eee; metalness: 1; roughness: 0; side: double">
+    </a-obj-model> -->
+
+<!-- 
+    <a-obj-model src="#eryk-obj" mtl="#eryk-mtl" scale="30 30 30" postion="0 -110 0" material="color: #eee; metalness: 1; roughness: 0; side: double">
+    </a-obj-model>
+
+    <a-obj-model src="#eryk-obj" mtl="#eryk-mtl" scale="1 1 1" postion="0 0 0" material="color: #eee; metalness: 1; roughness: 0; side: double">
+    </a-obj-model> -->
+
+    <a-obj-model src="#eryk-obj" mtl="#eryk-mtl" scale="30 30 30" position="-28 -62 -20" material="color: #eee; metalness: 1; roughness: 0; side: double" animation__rotation="property: rotation; dir: alternate; dur: 30000;
+    easing: easeInSine; loop: true; to: 0 360 0" obj-model="" position="0 1 -2">
+    <a-entity sound="src: #snd; autoplay: true;loop: true"></a-entity>
+
+    <a-obj-model src="#ryan-obj" position="0 10 0"mtl="#ryan-mtl" material="color:#eee; metalness:1;roughness:0;side:double;"
+    scale="5 5 5">
+</a-obj-model>
+
+    </a-obj-model>
+
+    <a-obj-model src="#ryan-obj" mtl="#ryan-mtl" material="color: #eee; metalness: 1; roughness: 0; side: double" animation__rotation="property: rotation; dir: alternate; dur: 30000; easing: easeInSine; loop: NaN; to: 0 360 0" obj-model="" position="0 -3.48438 -2" scale="1.66477 1.66477 1.66477">
+        <a-entity sound="src: #snd1; autoplay: true;loop: true"></a-entity>
+    </a-obj-model>
+        <!-- <a-gltf-model src="#hallway" scale="1 1 1" position="0 0 7" animation-mixer> -->
+
+            <!-- teleport rig -->
             <a-entity id="cameraRig" position="0 0.1 0">
                 <a-entity camera wasd-controls look-controls></a-entity>
                 <a-entity id="rightHand" mixin="teleport" laser-controls="hand: right"
@@ -98,7 +140,7 @@
                         windows-motion-controls="hand: left" oculus-go-controls="hand: left"
                         oculus-touch-controls="hand: left">
                     </a-entity> -->
-                </a-entity>
+            </a-entity>
 
     </a-scene>
 </body>
