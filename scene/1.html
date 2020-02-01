@@ -53,19 +53,18 @@
     <a-scene>
         <a-assets>
             <a-mixin id="teleport"
-                teleport-controls="type: parabolic; button: trigger; cameraRig: #cameraRig; defaultPlaneSize: 1000; ">
+                teleport-controls="type: parabolic; button: trigger; cameraRig: #cameraRig; defaultPlaneSize: 10000; ">
             </a-mixin>
             <a-mixin id="light" geometry="primitive: sphere; radius: 1.5" material="color: #FFF; shader: flat"
                 light="color: #DDDDFF; distance: 120; intensity: 1ß; type: point"></a-mixin>
             <a-mixin id="torusKnot" random-torus-knot random-material random-position="min: -40 8 -40; max: 40 40 40">
             </a-mixin>
             <audio id="grave" src="assets/sound/169975__klankbeeld__horror-ghost-22.wav" preload="auto"></audio>
-        </a-assets>
-        <a-asset-item id="hallway" src="assets/models/gumusler_monastery/scene.gltf" scale="0.2 0.2 0.2"
-            position="0 -1 0">
-            <a-asset-item id="nature-obj" src="assets/models/nature.obj"></a-asset-item>
-            <a-asset-item id="nature-mtl" src="assets/models/nature.mtl"></a-asset-item>
-        </a-asset-item>
+            <a-asset-item id="hallway" src="assets/models/gumusler_monastery/scene.gltf" scale="0.2 0.2 0.2"
+                position="0 -1 0">
+                <a-asset-item id="nature-obj" src="assets/models/nature.obj"></a-asset-item>
+                <a-asset-item id="nature-mtl" src="assets/models/nature.mtl"></a-asset-item>
+            </a-asset-item>
         </a-assets>
 
         <a-entity environment="preset: forest;fog: 0.7"></a-entity>
