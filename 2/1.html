@@ -27,10 +27,10 @@
   light="color: #DDDDFF; distance: 120; intensity: 4; type: point"></a-mixin>
 
 
-  <audio id="snd1" src="snd/hmpback4.wav" preload="auto"></audio>
+  <audio id="snd1" src="snd/hmpback1.wav" preload="auto"></audio>
       <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
       <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
-      <a-asset-item id="tree" src="skull/scene.gltf"></a-asset-item>
+      <a-asset-item id="tree" src="model2/MeetMat.gltf"></a-asset-item>
       <a-asset-item id="tree2" src="model3/test.glb"></a-asset-item>
       <a-asset-item id="tree3" src="ballena/scene.gltf"></a-asset-item>
 
@@ -53,7 +53,7 @@
     <!-- Ground. -->
     <a-circle src="#groundTexture" position="0 1.35 -10" rotation="-90 0 0" radius="32"></a-circle>
 
-    <a-entity position="0 -0.7 -10">
+    <a-entity position="0 -2 -10">
       <a-entity gltf-model="#tree" position="-0.402 5.712 -9.7"  scale="5 5 5"></a-entity>
       <a-entity gltf-model="#tree2" position="19.01201 -24.96162 11.10153" scale="7.3785 7.3785 7.3785"></a-entity>
     </a-entity>
@@ -61,7 +61,7 @@
 
     <a-entity animation="property: position; to: -0.402 14.69225 100 ; dur: 20000; easing: linear; loop: true">
       <a-entity gltf-model="#tree3" position="-0.402 14.69225 -100" rotation="0 90.00021045914971 8.898607516176815" scale="0.8 0.8 0.8" animation-mixer="">
-        <a-entity sound="src: #snd1; autoplay: true;loop: true; volume: 5"></a-entity>
+        <a-entity sound="src: #snd1; autoplay: true;loop: true; volume: 10"></a-entity>
       </a-entity>
 
     </a-entity>
