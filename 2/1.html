@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>aframe-boilerplate</title>
+  <meta name="description" content="gtlf test">
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js">
+  
+
+
+  </script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <a-mixin id="teleport"
+      teleport-controls="type: parabolic; button: trigger; cameraRig: #cameraRig; defaultPlaneSize: 10000; ">
+  </a-mixin>
+  <a-mixin id="light" geometry="primitive: sphere; radius: 1.5" material="color: #FFF; shader: flat"
+  light="color: #DDDDFF; distance: 120; intensity: 4; type: point"></a-mixin>
+
+<a-mixin id="light2" geometry="primitive: sphere; radius: 1.5" material="color: #FFF; shader: flat"
+  light="color: #DDDDFF; distance: 120; intensity: 4; type: point"></a-mixin>
+
+
+  <audio id="snd1" src="snd/hmpback4.wav" preload="auto"></audio>
+      <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
+      <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
+      <a-asset-item id="tree" src="model2/MeetMat.glb"></a-asset-item>
+      <a-asset-item id="tree2" src="model3/test.glb"></a-asset-item>
+      <a-asset-item id="tree2" src="SCULPTTEST7.glb"></a-asset-item>
+      <a-asset-item id="tree3" src="ballena/scene.gltf"></a-asset-item>
+
+    </a-assets>
+
+    <!-- Background sky. -->
+    <a-sky height="2048" radius="90" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+
+    <a-entity animation="property: rotation; to: 0 0 360; dur: 4000; easing: linear; loop: true">
+      <a-entity mixin="light" position="30 0 0"></a-entity>
+
+    </a-entity>
+
+    <a-entity animation="property: rotation; to: 0 360 0; dur: 4000; easing: linear; loop: true">
+      <a-entity mixin="light" position="30 0 0"></a-entity>
+
+    </a-entity>
+
+
+    <!-- Ground. -->
+    <a-circle src="#groundTexture" position="0 1.35 -10" rotation="-90 0 0" radius="32"></a-circle>
+
+    <a-entity gltf-model="#tree" position="-0.402 5.712 -9.7"  scale="5 5 5"></a-entity>
+
+    <a-entity animation="property: position; to: -0.402 14.69225 100 ; dur: 20000; easing: linear; loop: true">
+      <a-entity gltf-model="#tree3" position="-0.402 14.69225 -100" rotation="0 90.00021045914971 8.898607516176815" scale="0.8 0.8 0.8" animation-mixer="">
+        <a-entity sound="src: #snd1; autoplay: true;loop: true; volume: 1"></a-entity>
+      </a-entity>
+
+    </a-entity>
+
+    <a-entity gltf-model="model3/test.glb" position="19.01201 -24.96162 11.10153" scale="7.3785 7.3785 7.3785"></a-entity>
+
+    <a-entity id="cameraRig" position="0 0.1 0">
+      <a-entity camera wasd-controls look-controls></a-entity>
+      <a-entity id="rightHand" mixin="teleport" laser-controls="hand: right"
+          windows-motion-controls="hand: right" oculus-go-controls="hand: right"
+          oculus-touch-controls="hand: right">
+          <!-- <a-entity id="leftHand" mixin="teleport" laser-controls="hand: left"
+              windows-motion-controls="hand: left" oculus-go-controls="hand: left"
+              oculus-touch-controls="hand: left">
+          </a-entity> -->
+  </a-entity>
+
+  </a-scene>
+</body>
+
+</html>
