@@ -54,7 +54,11 @@
     <!-- Ground. -->
     <a-circle src="#groundTexture" position="0 1.35 -10" rotation="-90 0 0" radius="32"></a-circle>
 
-    <a-entity gltf-model="#tree" position="-0.402 5.712 -9.7"  scale="5 5 5"></a-entity>
+    <a-entity position="0 0 -10">
+      <a-entity gltf-model="#tree" position="-0.402 5.712 -9.7"  scale="5 5 5"></a-entity>
+      <a-entity gltf-model="#tree2" position="19.01201 -24.96162 11.10153" scale="7.3785 7.3785 7.3785"></a-entity>
+    </a-entity>
+
 
     <a-entity animation="property: position; to: -0.402 14.69225 100 ; dur: 20000; easing: linear; loop: true">
       <a-entity gltf-model="#tree3" position="-0.402 14.69225 -100" rotation="0 90.00021045914971 8.898607516176815" scale="0.8 0.8 0.8" animation-mixer="">
@@ -63,7 +67,7 @@
 
     </a-entity>
 
-    <a-entity gltf-model="model3/test.glb" position="19.01201 -24.96162 11.10153" scale="7.3785 7.3785 7.3785"></a-entity>
+  
 
     <a-entity id="cameraRig" position="0 0.1 0">
       <a-entity camera wasd-controls look-controls></a-entity>
