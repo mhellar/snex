@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>aframe-boilerplate</title>
+  <meta name="description" content="aframe-boilerplate">
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
+      <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
+      <a-asset-item id="tree" src="model2/MeetMat.glb"></a-asset-item>
+      <a-mixin id="light" geometry="primitive: sphere; radius: 1.5" material="color: #FFF; shader: flat"
+        light="color: #DDDDFF; distance: 120; intensity: 5; type: point"></a-mixin>
+
+      <a-mixin id="light2" geometry="primitive: sphere; radius: 1.5" material="color: #FFF; shader: flat"
+        light="color: #DDDDFF; distance: 120; intensity: 5; type: point"></a-mixin>
+
+    </a-assets>
+
+    <!-- Background sky. -->
+    <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+
+    <a-entity animation="property: rotation; to: 0 0 360; dur: 4000; easing: linear; loop: true">
+      <a-entity mixin="light" position="30 0 0"></a-entity>
+
+    </a-entity>
+
+    <a-entity animation="property: rotation; to: 0 360 0; dur: 4000; easing: linear; loop: true">
+      <a-entity mixin="light" position="30 0 0"></a-entity>
+
+    </a-entity>
+
+
+    <!-- Ground. -->
+    <a-circle src="#groundTexture" position="0 1.35 -10" rotation="-90 0 0" radius="32"></a-circle>
+
+    <a-entity gltf-model="model2/MeetMat.glb" position="-0.402 5.712 -9.7" scale="5 5 5"></a-entity>
+
+  </a-scene>
+</body>
+
+</html>
