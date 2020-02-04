@@ -14,7 +14,7 @@
       <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
       <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
       <a-asset-item id="tree" src="model2/MeetMat.glb"></a-asset-item>
-      <a-asset-item id="tree2" src="model3/test.glb"></a-asset-item>
+      <a-asset-item id="tree2" src="SCULPTTEST7.glb"></a-asset-item>
       <a-mixin id="light" geometry="primitive: sphere; radius: 1.5" material="color: #FFF; shader: flat"
         light="color: #DDDDFF; distance: 120; intensity: 5; type: point"></a-mixin>
 
@@ -42,7 +42,10 @@
 
     <a-entity gltf-model="#tree" position="-0.402 5.712 -9.7" scale="5 5 5"></a-entity>
 
-    <a-entity gltf-model="#tree2" position="2.06088 -1.445 -5.31814" scale="1 1 1"></a-entity>
+    <a-entity animation="property: position; to: -3.9615 4.57922 21.75674; dur: 10000; easing: linear; loop: true">
+
+      <a-entity gltf-model="SCULPTTEST7.glb" position="-3.9615 4.57922 -21.75674" scale="6 6 6">
+      </a-entity>
 
   </a-scene>
 </body>
