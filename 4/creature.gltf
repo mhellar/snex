@@ -1,0 +1,171 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 703614,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 166924,
+      "max": [
+        1.0,
+        0.904182553291321,
+        0.305941462516785
+      ],
+      "min": [
+        -1.0,
+        -0.904182553291321,
+        -0.305941492319107
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 166924,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 166924,
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Substance Painter 2019.2.3",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 2814456,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2003088,
+      "byteOffset": 2814456,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2003088,
+      "byteOffset": 4817544,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1335392,
+      "byteOffset": 6820632,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 8156024,
+      "uri": "creature.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "lambert1_normal.png"
+    },
+    {
+      "uri": "lambert1_emissive.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "OPAQUE",
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissiveTexture": {
+        "index": 1
+      },
+      "name": "lambert1",
+      "normalTexture": {
+        "index": 0
+      },
+      "pbrMetallicRoughness": {}
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Layer_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "root",
+      "scale": [
+        7.47925424575806,
+        7.47925424575806,
+        7.47925424575806
+      ],
+      "translation": [
+        -0.0741653442382812,
+        7.6879448890686,
+        2.28274512290955
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "Layer_1"
+    },
+    {
+      "mesh": 0,
+      "name": "Layer_1"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9985,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    }
+  ]
+}
